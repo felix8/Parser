@@ -1,0 +1,11 @@
+This is a Parser for analyzing mobile traces such as the ones uploaded in 
+Experiment 2. Here's how we run the program:
+
+1. Download the code for parser_trace.py and save it as any filename
+   (e.g parser_trace.py) with a .py extension
+2. Install Python 2.5+ (but not Python 3.0) on your machine
+3. Run the program as:
+
+$>python parser_trace.py
+
+For any queries email me at: arijit@cise.ufl.edu
