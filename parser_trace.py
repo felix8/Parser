@@ -70,13 +70,13 @@ o.write('\n'.join(mac_addresses))
 		
 # 4. # of encounters per device
 o.write("\n\n4. Number of encounters per device :-\n")
-devices = list(set([line.split(';')[2] for line in lines]))
+devices = list(set([line.split(';')[1] for line in lines]))
 encounters_per_device = []
 [encounters_per_device.append(0) for device in devices]
 
 for line in lines:
 	arr = line.split(';')
-	this_device = arr[2]
+	this_device = arr[1]
 	for i in range(len(devices)):
 		if this_device == devices[i]:
 			encounters_per_device[i] = encounters_per_device[i] + 1
@@ -89,7 +89,7 @@ lines = [line.strip(' ') for line in f.split('\n')]
 lines.remove(lines[len(lines)-1])
 
 o.write("\n\n5. Frequency of Access Points (AP) :-\n")
-total_ap_encounters = [line.split(';')[2] for line in lines]
+total_ap_encounters = [line.split(';')[1] for line in lines]
 access_points = list(set(total_ap_encounters))
 freq_access_points = [(ap,total_ap_encounters.count(ap)) for ap in access_points]
 
@@ -107,7 +107,7 @@ for i in range(len(freq_access_points)):
 
 # 6. Corresponding # of Bluetooth encounters per AP
 encounters_top20_ap = [[] for i in range(20)]
-
+o.write("\n\n6. Corresponding # of Bluetooth encounters per AP:-\n")
 for line in lines:
 	arr = line.split(';')
 	bluetooth = arr[1]
