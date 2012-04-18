@@ -89,7 +89,7 @@ lines = [line.strip(' ') for line in f.split('\n')]
 lines.remove(lines[len(lines)-1])
 
 o.write("\n\n5. Frequency of Access Points (AP) :-\n")
-total_ap_encounters = [line.split(';')[1] for line in lines]
+total_ap_encounters = [line.split(';')[2] for line in lines]
 access_points = list(set(total_ap_encounters))
 freq_access_points = [(ap,total_ap_encounters.count(ap)) for ap in access_points]
 
